@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bruno Guedes - Advocacia Previdenciária</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cor marinha: #0B122B */
+        /* Ouro metalizado: #D4AF37 com gradiente para brilho metálico */
+        .bg-marina { background-color: #0B122B; }
+        .text-marina { color: #0B122B; }
+        .border-marina { border-color: #0B122B; }
+        .bg-ouro { background-color: #D4AF37; }
+        .text-ouro { color: #D4AF37; }
+        .border-ouro { border-color: #D4AF37; }
+        .hover-bg-ouro:hover { background-color: #D4AF37; }
+        .hover-text-ouro:hover { color: #D4AF37; }
+        .ouro-gradient { background: linear-gradient(45deg, #D4AF37, #FFD700, #F5E6A3); }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/fundo3.jpg');
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        body { padding-top: 72px; }
+    </style>
+</head>
+<body class="text-gray-800 font-sans" onload="initializeAnimations()">
+    <!-- Header com fundo marinho -->
+    <header class="bg-marina shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center h-18">
+            <a href="#inicio" class="flex items-center">
+                <img src="imagens/logoNormal.png" alt="Logo Bruno Guedes Advocacia em marinha com ouro metálico, símbolo jurídico estilizado" class="h-14 w-auto" onerror="this.style.display='none';" />
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-white hover-text-ouro transition">Início</a>
+                <a href="#sobre" class="text-white hover-text-ouro transition">Sobre</a>
+                <a href="#servicos" class="text-white hover-text-ouro transition">Serviços</a>
+                <a href="#contato" class="text-white hover-text-ouro transition">Contato</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-marina border-t border-ouro py-4">
+            <nav class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="#inicio" class="text-white hover-text-ouro transition">Início</a>
+                <a href="#sobre" class="text-white hover-text-ouro transition">Sobre</a>
+                <a href="#servicos" class="text-white hover-text-ouro transition">Serviços</a>
+                <a href="#contato" class="text-white hover-text-ouro transition">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg bg-cover bg-center min-h-[calc(100vh-72px)] flex items-center justify-center text-center text-white px-4">
+        <div class="container mx-auto fade-in max-w-5xl">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Advocacia Previdenciária Especializada</h2>
+            <p class="text-xl md:text-2xl mb-8">Proteja seu futuro com nossos serviços jurídicos especializados em direitos previdenciários, aposentadorias e benefícios sociais.</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="https://api.whatsapp.com/send?phone=5583981516816&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20meus%20direitos." class="ouro-gradient hover:bg-marina text-marina px-8 py-4 rounded-lg font-semibold transition duration-300 transform hover:scale-105">Iniciar Atendimento</a>
+                <button onclick="scrollToServices()" class="border-2 border-white hover:border-ouro hover:text-ouro text-white px-8 py-4 rounded-lg font-semibold transition duration-300 bg-transparent">Saiba Mais Sobre Nossos Serviços</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <!--<div class="text-center mb-12">
+                    </div>-->
+                <div class="md:col-span-2 fade-in">
+
+                    <h4 class="text-2xl font-semibold text-marina mb-4">Quem Sou</h4>
+
+                    <p class="text-gray-600 mb-6">Sou Bruno Guedes, advogado inscrito na OAB/PB nº 34.203, graduado em Direito, pós-graduado em Direito Previdenciário e atualmente pós-graduando em Direito Trabalhista. Dedico minha atuação à defesa dos direitos de trabalhadores, aposentados, pensionistas, agricultores e demais segurados que buscam amparo e proteção perante a Previdência Social.</p>
+
+                    <h4 class="text-2xl font-semibold text-marina mb-4">Minha Missão</h4>
+
+                    <p class="text-gray-600 mb-6">Proporcionar soluções jurídicas eficientes e acessíveis no campo da advocacia previdenciária, ajudando nossos clientes a navegar pelo sistema de benefícios sociais com confiança e segurança.</p>
+
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Atendimento humanizado e personalizado</li>
+                        <li>• Atuação administrativa e judicial</li>
+                        <li>• Especialização em Direito Previdenciário</li>
+                        <li>• Transparência e compromisso</li>
+                    </ul>
+
+                </div>
+                <div class="fade-in">
+                    <img src="imagens/advogado2.jpeg" alt="Foto profissional do advogado Bruno Guedes em terno marinho sorrindo confiante, fundo neutro representando confiança" class="w-full h-70 object-cover rounded-lg shadow-lg" onerror="this.style.display='none';" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 bg-gray-100">
+      
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-marina mb-4">
+                    Benefícios Previdenciários Que Podemos Ajudar Você a Conquistar
+                </h3>
+
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Atuamos na concessão, revisão e restabelecimento dos principais benefícios do INSS, oferecendo orientação jurídica especializada em cada etapa do processo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Aposentadoria Rural
+                    </h4>
+                    <p class="text-gray-600">
+                        Para agricultores, pescadores artesanais e segurados especiais que exercem atividade rural.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Aposentadoria por Idade
+                    </h4>
+                    <p class="text-gray-600">
+                        Análise dos requisitos, tempo de contribuição e melhor estratégia para obtenção do benefício.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Salário-Maternidade
+                    </h4>
+                    <p class="text-gray-600">
+                        Benefício devido às trabalhadoras urbanas e rurais em razão do nascimento, adoção ou guarda judicial.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Pensão por Morte
+                    </h4>
+                    <p class="text-gray-600">
+                        Orientação e atuação para dependentes de segurados falecidos, inclusive em casos de união estável.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Auxílio por Incapacidade Temporária
+                    </h4>
+                    <p class="text-gray-600">
+                        Benefício destinado a segurados temporariamente impossibilitados de exercer suas atividades profissionais.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Aposentadoria por Incapacidade Permanente
+                    </h4>
+                    <p class="text-gray-600">
+                        Para segurados que não possuem condições de retornar ao trabalho de forma definitiva.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        BPC/LOAS
+                    </h4>
+                    <p class="text-gray-600">
+                        Benefício assistencial destinado a idosos e pessoas com deficiência em situação de vulnerabilidade social.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Auxílio-Acidente
+                    </h4>
+                    <p class="text-gray-600">
+                        Indenização mensal para segurados que ficaram com sequelas permanentes após acidente.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-ouro">
+                    <h4 class="text-xl font-semibold text-marina mb-4">
+                        Planejamento Previdenciário
+                    </h4>
+                    <p class="text-gray-600">
+                        Estudo completo para identificar a melhor forma e o melhor momento para sua aposentadoria.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contato Section -->
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+
+                <!-- Informações de Contato -->
+                <div class="fade-in h-full">
+                    <div class="h-full flex flex-col justify-center">
+                        <h4 class="text-2xl font-semibold text-marina mb-6">
+                            Informações de Contato
+                        </h4>
+
+                        <div class="space-y-4 text-gray-600 text-lg">
+                            <p><strong>Endereço:</strong><br>
+                                R. Flávio Maroja Filho - Bairro do Sesi, Bayeux/PB
+                            </p>
+                            <p><strong>Telefone/WhatsApp:</strong><br>
+                                (83) 98151-6816
+                            </p>
+                            <p><strong>E-mail:</strong><br>
+                                brunoguedes.advocacia@gmail.com
+                            </p>
+                            <p>
+                                <strong>Atendimento Remoto:</strong><br>
+                                Segunda a Sexta, das 08h às 17h
+                            </p>
+                            <p>
+                                <strong>Atendimento Presencial:</strong><br>
+                                Agendado
+                            </p>
+                        </div>
+
+                        <div class="mt-8">
+                            <img
+                                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da0ae793-5de5-4f6f-acbb-db2e6b847466.png"
+                                alt="Localização do escritório"
+                                class="w-full h-48 object-cover rounded-lg shadow-lg"
+                                onerror="this.style.display='none';"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão WhatsApp -->
+                <div class="fade-in h-full">
+
+                    <div class="bg-gray-50 rounded-lg shadow-lg border-t-4 border-ouro h-full flex flex-col justify-center items-center text-center p-6 md:p-10"> 
+                        <!-- Ícone WhatsApp --> 
+                        <div class="mb-6"> <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 md:w-28 md:h-28 text-green-500" 
+                            fill="currentColor" viewBox="0 0 24 24"> <path d="M20.52 3.48A11.86 11.86 0 0012.06 0C5.5 0 .18 5.31.18 11.88c0 2.1.55 4.15 1.6 5.96L0 24l6.35-1.66a11.9 11.9 0 005.71 1.46h.01c6.56 0 11.88-5.31 11.88-11.88 0-3.17-1.23-6.15-3.43-8.44zM12.07 21.8h-.01a9.9 9.9 0 01-5.04-1.38l-.36-.21-3.77.99 1.01-3.67-.23-.38a9.88 9.88 0 01-1.52-5.27c0-5.46 4.45-9.91 9.92-9.91 2.65 0 5.14 1.03 7.01 2.9a9.84 9.84 0 012.9 7c-.01 5.47-4.46 9.93-9.91 9.93zm5.44-7.43c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5-.89-.79-1.5-1.77-1.67-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.93-2.25-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.52 0 1.48 1.08 2.92 1.23 3.12.15.2 2.12 3.24 5.14 4.54.72.31 1.29.49 1.73.63.73.23 1.39.2 1.91.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.08-.12-.28-.2-.58-.35z"/> 
+                            </svg> 
+                        </div> 
+                        <h3 class="text-2xl md:text-3xl font-bold text-marina mb-3"> 
+                            Fale Diretamente Com Um Advogado 
+                        </h3> 
+                        <p class="text-gray-600 text-base md:text-lg max-w-md mb-6"> 
+                            Receba orientação jurídica especializada, esclareça dúvidas sobre benefícios do INSS e descubra quais são os seus direitos. 
+                        </p> 
+                        <a href="https://wa.me/5583981516816?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20uma%20orientação%20jurídica." 
+                        target="_blank" 
+                        class="ouro-gradient text-marina px-8 py-4 rounded-lg font-bold text-lg md:text-xl transition duration-300 transform hover:scale-105 shadow-lg"> 
+                            Iniciar Atendimento 
+                        </a> 
+                        <p class="text-sm text-gray-500 mt-4"> 
+                            Atendimento online para todo o Brasil 
+                        </p> 
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-marina text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-ouro">Bruno Guedes - Advocacia</h5>
+                    <p class="text-gray-400">Advocacia especializada em direito previdenciário desde 2024.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-ouro">Links Rápidos</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#inicio" class="hover:text-ouro transition">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-ouro transition">Sobre</a></li>
+                        <li><a href="#servicos" class="hover:text-ouro transition">Serviços</a></li>
+                        <li><a href="#contato" class="hover:text-ouro transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-ouro">Redes Sociais</h5>
+                    <p class="text-gray-400">Conecte-se conosco para atualizações e dicas em direito previdenciário.</p>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                        <a href="https://www.instagram.com/brunoguedesadv" class="text-white hover:text-ouro transition" target="_blank">[INSTAGRAM]</a>
+                        <a href="https://wa.me/5583981516816" class="text-white hover:text-ouro transition" target="_blank">[WHATSAPP]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-ouro mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024 Bruno Guedes Advocacia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function enviarWhatsApp() {
+            const nome = document.getElementById('name').value;
+            const mensagem = document.getElementById('message').value;
+
+            const texto =
+                `Olá, meu nome é ${nome}.%0A%0A` +
+                `Mensagem:%0A${mensagem}`;
+
+            window.open(
+                `https://wa.me/5583981516816?text=${texto}`,
+                '_blank'
+            );
+        }
+
+        function initializeAnimations() {
+
+            // Menu Mobile
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Fechar menu ao clicar em um link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Animação ao rolar a página
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.8s ease';
+                observer.observe(element);
+            });
+
+            // Scroll suave para serviços
+            window.scrollToServices = function() {
+                document.getElementById('servicos').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            };
+
+        }
+    </script>
+</body>
+</html>
+</content>
+</create_file>
